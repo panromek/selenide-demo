@@ -5,12 +5,20 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AuthenticationPage {
 
-    public SelenideElement getErrorMessage(){
-        return $(By.id("errormsg_0_Email"));
-    }
-
     public SelenideElement getEmailTextBox(){
         return $(By.id("Email"));
+    }
+
+    public SelenideElement getPasswordTextBox(){
+        return $(By.id("Passwd"));
+    }
+
+    public SelenideElement getSignInButton(){
+        return $(By.id("signIn"));
+    }
+
+    public SelenideElement getGmailMenu(){
+        return $(By.className("nM"));
     }
 
 }

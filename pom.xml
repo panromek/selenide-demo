@@ -14,6 +14,8 @@
         <aspectj.version>1.7.4</aspectj.version>
         <allure.version>1.4.23</allure.version>
         <allure.plugin.version>2.2</allure.plugin.version>
+        <email>enter-from-command-line</email>
+        <password>enter-from-command-line</password>
     </properties>
 
 
@@ -51,12 +53,6 @@
             <version>${allure.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>ru.yandex.qatools.allure</groupId>
-            <artifactId>allure-testng-adaptor</artifactId>
-            <version>${allure.version}</version>
-        </dependency>
-
     </dependencies>
 
 
@@ -72,6 +68,10 @@
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                     </argLine>
+                    <systemPropertyVariables>
+                        <email>${email}</email>
+                        <password>${password}</password>
+                    </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/main/resources/testSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>

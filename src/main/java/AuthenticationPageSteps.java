@@ -1,11 +1,8 @@
 import ru.yandex.qatools.allure.annotations.Step;
 
-import static com.codeborne.selenide.Condition.text;
-
 public class AuthenticationPageSteps {
 
     private AuthenticationPage pageToVerify;
-    private final String INVALID_EMAIL_MESSAGE = "Sorry, Google doesn't recognize that email";
 
     public AuthenticationPageSteps(AuthenticationPage page){
         this.pageToVerify = page;
@@ -28,13 +25,28 @@ public class AuthenticationPageSteps {
     }
 
     @Step
-    public void verifyErrorMessageLabelPresence(){
-        pageToVerify.getErrorMessage().exists();
+    public void verifyPasswordTetBoxPresence(){
+        pageToVerify.getPasswordTextBox().exists();
     }
 
     @Step
-    public void verifyErrorMessageText(){
-        pageToVerify.getErrorMessage().shouldHave(text(INVALID_EMAIL_MESSAGE));
+    public void verifySignInButtonPresence(){
+        pageToVerify.getSignInButton().exists();
+    }
+
+    @Step
+    public void enterPassword(String password){
+        pageToVerify.getPasswordTextBox().setValue(password);
+    }
+
+    @Step
+    public void clickSignInButton(){
+        pageToVerify.getSignInButton().click();
+    }
+
+    @Step
+    public void verifyGmailMenuPresence(){
+        pageToVerify.getGmailMenu().exists();
     }
 
 }
