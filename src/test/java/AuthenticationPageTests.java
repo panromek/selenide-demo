@@ -7,7 +7,7 @@ public class AuthenticationPageTests {
 
     @Parameters({"email", "password"})
     @Test
-    public void verifyInvalidEmailMessage(String email, String password){
+    public void verifyGmailLoginProcedure(String email, String password){
         AuthenticationPage page = open("http://gmail.com", AuthenticationPage.class);
         AuthenticationPageSteps steps = new AuthenticationPageSteps(page);
 
