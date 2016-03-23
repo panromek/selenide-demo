@@ -1,12 +1,14 @@
 In order to execute the test you need run the following Maven commands:
 
-mvn clean test
+mvn clean test -Demail=test_email_address -Dpassword=test_password
 
 mvn site
 
-mvn jetty:run -Djetty.port=1111
+mvn jetty:run -Djetty.port=port_number
 
 
-You can select whichever port you like. 
-After executing the last command, you can access Allure report at http://localhost:1111,
-where 1111 - is a port which you have selected (1111 - is just an example).
+You need to specify the following parameters: test_email_address, test_password, port_number.
+
+You will be able to access Allure report at http://localhost:port_number
+
+ATTENTION! Your email and password will be shown in Allure report. Do not use personal email and password to avoid inconveniences.
